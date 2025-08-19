@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Royal Gate – Premium Basmati Rice</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Montserrat', sans-serif; }
+body { background-color: #fff; color: #333; scroll-behavior: smooth; }
+
+/* Header */
+header { background-color: #0b3d91; padding: 20px 50px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; }
+header .logo { color: #FFD700; font-size: 28px; font-weight: 700; }
+nav a { color: white; margin-left: 30px; text-decoration: none; font-weight: 500; transition: color 0.3s; }
+nav a:hover { color: #FFD700; }
+
+/* Hero Slider */
+.hero { position: relative; height: 90vh; overflow: hidden; display: flex; justify-content: center; align-items: center; text-align: center; color: white; }
+.hero-slide { position: absolute; width: 100%; height: 100%; background-size: cover; background-position: center; opacity: 0; transition: opacity 1s; }
+.hero-slide.active { opacity: 1; }
+.hero-content { position: relative; z-index: 10; }
+.hero-content h1 { font-size: 48px; margin-bottom: 20px; text-shadow: 2px 2px 5px rgba(0,0,0,0.5); }
+.hero-content button { padding: 15px 30px; font-size: 18px; background-color: #FFD700; border: none; cursor: pointer; font-weight: 600; transition: background 0.3s; }
+.hero-content button:hover { background-color: #e6c200; }
+
+/* Section Titles */
+.section-title { text-align: center; font-size: 32px; margin: 50px 0 20px; color: #0b3d91; }
+
+/* Products */
+.products { display: flex; justify-content: center; flex-wrap: wrap; gap: 30px; padding: 0 50px; }
+.product-card { border: 1px solid #ddd; border-radius: 10px; overflow: hidden; width: 250px; text-align: center; transition: transform 0.3s, box-shadow 0.3s; }
+.product-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+.product-card img { width: 100%; height: 200px; object-fit: cover; }
+.product-card h3 { margin: 15px 0; color: #0b3d91; }
+.product-card p { margin-bottom: 15px; font-weight: 500; }
+.product-card button { background-color: #0b3d91; color: white; border: none; padding: 10px 20px; margin-bottom: 15px; cursor: pointer; transition: background 0.3s; }
+.product-card button:hover { background-color: #082a63; }
+
+/* Why Choose Us */
+.why-choose { display: flex; justify-content: center; flex-wrap: wrap; gap: 40px; padding: 30px 50px; }
+.why-card { text-align: center; width: 220px; }
+.why-card h3 { color: #0b3d91; margin-bottom: 10px; }
+.why-card p { color: #555; }
+
+/* Testimonials */
+.testimonials { background-color: #f7f7f7; padding: 50px; text-align: center; position: relative; overflow: hidden; }
+.testimonial-slide { display: none; font-style: italic; color: #555; max-width: 600px; margin: 0 auto; }
+.testimonial-slide.active { display: block; }
+
+/* Order Form */
+.order-form { max-width: 600px; margin: 50px auto; padding: 30px; border: 1px solid #ddd; border-radius: 10px; }
+.order-form h2 { text-align: center; margin-bottom: 20px; color: #0b3d91; }
+.order-form input, .order-form select, .order-form textarea, .order-form button { width: 100%; padding: 12px; margin-bottom: 15px; border-radius: 5px; border: 1px solid #ccc; font-size: 16px; }
+.order-form button { background-color: #0b3d91; color: white; border: none; cursor: pointer; font-weight: 600; transition: background 0.3s; }
+.order-form button:hover { background-color: #082a63; }
+
+/* Footer */
+footer { background-color: #0b3d91; color: white; padding: 30px 50px; display: flex; justify-content: space-between; flex-wrap: wrap; }
+footer div { margin-bottom: 10px; }
+footer a { color: #FFD700; text-decoration: none; margin-right: 15px; }
+footer a:hover { text-decoration: underline; }
+
+@media (max-width: 768px) { .products, .why-choose { flex-direction: column; align-items: center; } }
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<header>
+    <div class="logo">Royal Gate</div>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About Us</a>
+        <a href="#products">Products</a>
+        <a href="#order">Order</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<!-- Hero Slider -->
+<section class="hero" id="home">
+    <div class="hero-slide active" style="background-image:url('https://images.unsplash.com/photo-1589923188900-9e8872b22d44?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080');"></div>
+    <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1590433992794-37bda49c44f8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080');"></div>
+    <div class="hero-content">
+        <h1>Experience the Royal Taste of Basmati Rice</h1>
+        <button onclick="document.getElementById('order').scrollIntoView({behavior:'smooth'})">Order Now</button>
+    </div>
+</section>
+
+<!-- Products -->
+<h2 class="section-title" id="products">Our Products</h2>
+<div class="products">
+    <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1590433992794-37bda49c44f8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400" alt="Royal Basmati 1kg">
+        <h3>Royal Basmati</h3>
+        <p>1kg – ₹250</p>
+        <button>Buy Now</button>
+    </div>
+    <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1590433992794-37bda49c44f8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400" alt="Royal Basmati 5kg">
+        <h3>Royal Basmati</h3>
+        <p>5kg – ₹1200</p>
+        <button>Buy Now</button>
+    </div>
+    <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1589923188900-9e8872b22d44?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400" alt="Royal Golden 1kg">
+        <h3>Royal Golden</h3>
+        <p>1kg – ₹270</p>
+        <button>Buy Now</button>
+    </div>
+</div>
+
+<!-- Why Choose Us -->
+<h2 class="section-title">Why Choose Us</h2>
+<div class="why-choose">
+    <div class="why-card">
+        <h3>Fresh & Pure</h3>
+        <p>We deliver only the finest Basmati rice with unmatched quality.</p>
+    </div>
+    <div class="why-card">
+        <h3>Premium Packaging</h3>
+        <p>Elegant and secure packaging ensures freshness and luxury.</p>
+    </div>
+    <div class="why-card">
+        <h3>Trusted Quality</h3>
+        <p>Our customers love the consistent taste and purity of our rice.</p>
+    </div>
+    <div class="why-card">
+        <h3>Fast Delivery</h3>
+        <p>We ensure quick and safe delivery across India.</p>
+    </div>
+</div>
+
+<!-- Testimonials -->
+<h2 class="section-title">Testimonials</h2>
+<section class="testimonials">
+    <div class="testimonial-slide active">“Royal Gate rice is the best in taste and quality!” – S. Roy</div>
+    <div class="testimonial-slide">“Loved the packaging and prompt delivery.” – P. Sen</div>
+</section>
+
+<!-- Order Form -->
+<section id="order" class="order-form">
+<h2>Place Your Order</h2>
+<form action="https://formspree.io/f/yourFormID" method="POST" onsubmit="window.open('https://wa.me/919831444717?text=New+Order+from+Royal+Gate','_blank')">
+    <input type="text" name="name" placeholder="Full Name" required>
+    <input type="tel" name="phone" placeholder="Phone Number" required>
+    <input type="text" name="address" placeholder="Address" required>
+    <select name="product" required>
+        <option value="">Select Product</option>
+        <option>Royal Basmati 1kg</option>
+        <option>Royal Basmati 5kg</option>
+        <option>Royal Golden 1kg</option>
+    </select>
+    <input type="number" name="quantity" placeholder="Quantity" min="1" required>
+    <textarea name="notes" placeholder="Additional Notes"></textarea>
+    <button type="submit">Submit Order</button>
+</form>
+</section>
+
+<!-- Footer -->
+<footer id="contact">
+<div>
+    <h3>Contact Us</h3>
+    <p>09, Pathak House, Munshirhat Road, Bargachi, Howrah, West Bengal, 711404</p>
+    <p>Phone: 9831444717 | 9474116198</p>
+    <p>Email: techcomputer0009@gmail.com</p>
+</div>
+<div>
+    <h3>Follow Us</h3>
+    <a href="#">Facebook</a>
+    <a href="#">Instagram</a>
+    <a href="#">WhatsApp</a>
+</div>
+</footer>
+
+<script>
+// Hero Slider
+let slides = document.querySelectorAll('.hero-slide');
+let currentSlide = 0;
+setInterval(() => {
+    slides[currentSlide].classList.remove('active');
+    currentSlide = (currentSlide + 1) % slides.length;
+    slides[currentSlide].classList.add('active');
+}, 5000);
+
+// Testimonials Slider
+let testimonialSlides = document.querySelectorAll('.testimonial-slide');
+let currentTestimonial = 0;
+setInterval(() => {
+    testimonialSlides[currentTestimonial].classList.remove('active');
+    currentTestimonial = (currentTestimonial + 1) % testimonialSlides.length;
+    testimonialSlides[currentTestimonial].classList.add('active');
+}, 7000);
+</script>
+
+</body>
+</html>
